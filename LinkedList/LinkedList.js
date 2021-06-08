@@ -26,6 +26,19 @@ class LinkedList{
             this.last=this.last.next;
         }
     }
+    reverse(){
+        let first;
+        let second;
+        let third=this.head;
+        while(third!=null){
+            first=second;
+            second=third;
+            third=third.next;
+            second.next=first;
+        }
+        this.last=this.head;
+        this.head=second;
+    }
     print(){
         let tmp=this.head;
         while(tmp!=null){
@@ -40,4 +53,7 @@ List.addFirst(1);
 List.addFirst(2);
 List.addFirst(3);
 List.addFirst(4);
+List.print();
+List.reverse();
+console.log("\n");
 List.print();
